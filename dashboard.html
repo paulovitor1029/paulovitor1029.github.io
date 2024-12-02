@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mdash</title>
+</head>
+<body>
+    <button onclick="window.location.href='index2.php';" 
+                style="
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background-color: #800080; 
+                    color: white;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                ">
+            Voltar ao Menu
+        </button>
+    <iframe width="1950" height="1050" src="https://lookerstudio.google.com/embed/reporting/c7dbe21d-5b83-468e-804d-e3d2be4dd7dc/page/HGxDE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <div id="popup">
+        <button class="close-btn" onclick="fecharPopup()">×</button>
+        <h4>Aviso</h4>
+        <p>Antes de iniciar por favor escolha uma data</p>
+    </div>
+
+    <script>
+       
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'block';
+            // Fechar o popup automaticamente após 10 segundos
+            setTimeout(fecharPopup, 10000);
+        }, 1000);
+        };
+
+       
+        function fecharPopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    
+    
+
+    </script>
+</body>
+</html>

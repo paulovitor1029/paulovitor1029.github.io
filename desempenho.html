@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório de Desempenho - Conteúdo Premium</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+     
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #dbbf41;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #7e6488;
+    }
+
+    .dropdown-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .dropdown {
+      font-size: 1.2rem;
+      padding: 10px;
+      width: 200px;
+      border-radius: 8px;
+      border: 2px solid #8328b8;
+      background-color: #fff;
+      color: #8328b8;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      color: #3f2c50;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: #7f7681;
+      margin-bottom: 15px;
+    }
+
+    .performance-bar {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .performance-bar .bar {
+      height: 30px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: white;
+    }
+
+    .performance-bar .bar:first-child {
+      background-color: #e74c3c; 
+    }
+
+    .performance-bar .bar:nth-child(2) {
+      background-color: #f39c12; 
+    }
+
+    .performance-bar .bar:nth-child(3) {
+      background-color: #2ecc71; 
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color:#4f345e;
+      color: #fff;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+   
+    <header>
+      <h1>Desempenho - Notas e Redação</h1>
+      <p>Relatório detalhado do desempenho dos alunos nas avaliações por ano.</p>
+    </header>
+
+    <!-- Dropdown para selecionar o ano -->
+    <div class="dropdown-container">
+      <select class="dropdown" id="yearSelect">
+        <option value="1998">1998</option>
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001">2001</option>
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+        <option value="2004">2004</option>
+        <option value="2005">2005</option>
+        <option value="2006">2006</option>
+        <option value="2007">2007</option>
+        <option value="2008">2008</option>
+        <option value="2009">2009</option>
+        <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+    </div>
+
+    <!-- Cartões de Dados de Desempenho -->
+    <div id="performanceData" class="card">
+      <h2>Desempenho de 1998</h2>
+      <p><strong>Irregular:</strong> Não disponível</p>
+      <p><strong>Desempenho Médio:</strong> Não disponível</p>
+      <p><strong>Desempenho Ótimo:</strong> Não disponível</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p> Dados fornecidados através do instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira</p>
+    </footer>
+  </div>
+
+  <script>
+    // Dados de desempenho para cada ano
+    const performanceData = {
+      "1998": { irregular: "Não disponível", medio: "Não disponível", otimo: "Não disponível" },
+      "1999": { irregular: "30,50%", medio: "51,50%", otimo: "18%" },
+      "2000": { irregular: "31%", medio: "50,70%", otimo: "18,30%" },
+      "2001": { irregular: "29,30%", medio: "18,70%", otimo: "52%" },
+      "2002": { irregular: "Não disponível", medio: "Não disponível", otimo: "Não disponível" },
+      "2003": { irregular: "13,60%", medio: "27%", otimo: "13,70%" },
+      "2004": { irregular: "18,90%", medio: "54,90%", otimo: "16,10%" },
+      "2005": { irregular: "10,90%", medio: "75,70%", otimo: "13,30%" },
+      "2006": { irregular: "10,40%", medio: "70,80%", otimo: "10,50%" },
+      "2007": { irregular: "10% a 20%", medio: "70% a 80%", otimo: "10% a 20%" },
+      "2008": { irregular: "10% a 20%", medio: "70% a 80%", otimo: "10% a 20%" },
+      "2009": { irregular: "20%", medio: "50%", otimo: "30%" },
+      "2010": { irregular: "20%", medio: "50%", otimo: "30%" },
+      "2011": { irregular: "15%", medio: "55%", otimo: "30%" },
+      "2012": { irregular: "20% a 30%", medio: "40% a 60%", otimo: "20% a 30%" },
+      "2013": { irregular: "20% a 30%", medio: "40% a 60%", otimo: "20% a 30%" },
+      "2014": { irregular: "20% a 30%", medio: "40% a 60%", otimo: "20% a 30%" },
+      "2015": { irregular: "15%", medio: "55%", otimo: "30%" },
+      "2016": { irregular: "15% a 20%", medio: "50% a 60%", otimo: "20% a 30%" },
+      "2017": { irregular: "25,20%", medio: "68%", otimo: "6,70%" },
+      "2018": { irregular: "17%", medio: "68%", otimo: "15%" },
+      "2019": { irregular: "20%", medio: "65%", otimo: "15%" },
+      "2020": { irregular: "16%", medio: "68%", otimo: "16%" },
+      "2021": { irregular: "pontuação abaixo de 493", medio: "pontuação entre 493 e 812", otimo: "pontuação acima de 812" },
+      "2022": { irregular: "18 estudantes tiraram nota máxima", medio: "não especificado", otimo: "não especificado" }
+    };
+
+    // Função para atualizar os dados de desempenho na página
+    function updatePerformanceData(year) {
+      const data = performanceData[year];
+      const performanceDiv = document.getElementById('performanceData');
+
+      performanceDiv.innerHTML = `
+        <h2>Desempenho de ${year}</h2>
+        <p><strong>Irregular:</strong> ${data.irregular}</p>
+        <p><strong>Desempenho Médio:</strong> ${data.medio}</p>
+        <p><strong>Desempenho Ótimo:</strong> ${data.otimo}</p>
+      `;
+    }
+
+    // Atualiza os dados quando o ano for selecionado
+    document.getElementById('yearSelect').addEventListener('change', function() {
+      const selectedYear = this.value;
+      updatePerformanceData(selectedYear);
+    });
+
+    // Atualizar com o valor inicial (1998)
+    updatePerformanceData('1998');
+  </script>
+</body>
+</html>
